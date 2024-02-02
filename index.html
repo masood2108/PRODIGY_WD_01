@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      overflow-x: hidden; 
+    }
+
+    #navbar {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background-color: #333;
+      padding: 10px 0;
+      text-align: center;
+      transition: background-color 0.3s, color 0.3s;
+      z-index: 1000; 
+    }
+
+    #navbar a {
+      color: white;
+      text-decoration: none;
+      padding: 14px 16px;
+      display: inline-block;
+      transition: color 0.3s;
+    }
+
+    #navbar a:hover {
+      color: #00bcd4;
+    }
+
+    #content {
+      padding: 80px 20px 20px;
+    }
+
+    #polarBearInfo {
+      max-width: 600px;
+      margin: 0 auto;
+      text-align: justify;
+    }
+
+    #imageContainer {
+      position: relative;
+      max-width: 100%;
+      height: auto;
+      text-align: center;
+      margin-top: 60px;
+      overflow: hidden;
+    }
+
+    #polarBearImage {
+      width: 100%;
+      height: auto;
+    }
+
+    #imageText {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      color: #fff;
+      font-size: 24px;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+      opacity: 0;
+      animation: fadeInUp 2s ease-in-out forwards;
+    }
+
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translate(-50%, -40%);
+      }
+      to {
+        opacity: 1;
+        transform: translate(-50%, -50%);
+      }
+    }
+
+    @media only screen and (max-width: 600px) {
+      #navbar a {
+        padding: 10px;
+      }
+
+      #polarBearInfo {
+        max-width: 100%;
+      }
+
+      #imageText {
+        font-size: 18px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div id="imageContainer">
+    <img id="polarBearImage" src="polarbear.jpg" alt="Polar Bear Image">
+    <div id="imageText">Discover the World of Polar Bears</div>
+  </div>
+
+  <div id="navbar">
+    <a href="#">Home</a>
+    <a href="#">About Polar Bears</a>
+    <a href="#">Habitat</a>
+    <a href="#">Conservation</a>
+    <a href="#">Gallery</a>
+  </div>
+
+  <div id="content">
+    <div id="polarBearInfo">
+      <h1>About Polar Bears</h1>
+      <p>
+        Polar bears are large carnivorous mammals native to the Arctic region. They are excellent swimmers and primarily inhabit the sea ice throughout the Arctic Ocean. These majestic creatures are well-adapted to their frigid environment.
+      </p>
+      <p>
+        Polar bears are listed as vulnerable due to the ongoing loss of their sea ice habitat caused by climate change. Conservation efforts are crucial to protect these incredible animals and their ecosystem.
+      </p>
+      <p>
+        Explore the sections in the navigation menu to learn more about polar bears and their habitat.
+      </p>
+    </div>
+  </div>
+
+  <script>
+    const navbar = document.getElementById('navbar');
+
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 0) {
+        navbar.style.backgroundColor = '#00bcd4';
+      } else {
+        navbar.style.backgroundColor = '#333';
+      }
+    });
+  </script>
+</body>
+</html>
